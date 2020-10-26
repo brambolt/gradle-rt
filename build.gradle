@@ -29,6 +29,7 @@ ext {
     name: 'Stefán Sigurðsson'
   ]]
   inceptionYear = '2017'
+  isGitHosted = true
   isOpenSource = true // Enables publishing to plugins.gradle.org and Bintray
   licenses = [[
     id: 'Apache-2.0',
@@ -50,4 +51,11 @@ dependencies {
   testImplementation "org.slf4j:slf4j-api:${slf4jVersion}"
   testImplementation "org.spockframework:spock-core:${spockVersion}"
   testRuntime "org.slf4j:slf4j-simple:${slf4jVersion}"
+}
+
+test {
+  testLogging {
+    outputs.upToDateWhen { false }
+    showStandardStreams = true
+  }
 }
