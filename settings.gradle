@@ -25,4 +25,4 @@ pluginManagement {
   }
 }
 
-rootProject.name = 'gradle-rt'
+rootProject.name = 'brambolt-gradle-rt'
