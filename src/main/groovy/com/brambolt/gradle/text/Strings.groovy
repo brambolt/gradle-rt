@@ -33,9 +33,22 @@ class Strings {
   static String toCamelCase(String needsHumps, List<String> delimiters) {
     split(needsHumps, * (delimiters as List))
     // Capitalize the first letter of each segment:
-      .collect { s -> s.substring(0, 1).toUpperCase() + s.substring(1) }
+      .collect { s -> firstToUpperCase(s) }
     // Join the segments into a camel-cased string:
       .join('')
+  }
+
+  /**
+   * Converts the parameter string by replacing the first character with its
+   * uppercase equivalent (so <code>camel</code> becomes <code>Camel</code>,
+   * <code>camelCase</code> becomes <code>CamelCase</code> and
+   * <code>PascalCase</code> remains unchanged.
+   *
+   * @param s The string to convert
+   * @return The converted string
+   */
+  static String firstToUpperCase(String s) {
+    s.substring(0, 1).toUpperCase() + s.substring(1)
   }
 
   /**
